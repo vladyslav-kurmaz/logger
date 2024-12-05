@@ -1,0 +1,24 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model ClientLog {
+  id          String   @id @default(uuid())  
+  actionType  String                             
+  data        Json                               
+  path        String                             
+  timestamp   DateTime                           
+}
+
+model ErrorLog {
+  id            Int      @id @default(autoincrement())
+  error_message String
+  stack_trace   String?
+  path          String
+  timestamp     DateTime
+}

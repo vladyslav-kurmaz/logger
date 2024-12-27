@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Log {
+  id          String    @id @default(cuid())
+  type        String    // 'action' or 'error'
+  message     String
+  metadata    String?   // JSON string for additional data
+  timestamp   DateTime  @default(now())
+  parentId    String?   // For linking related logs
+  parent      Log?      @relation("LogSequence", fields: [parentId], references: [id])
+  children    Log[]     @relation("LogSequence")
+}

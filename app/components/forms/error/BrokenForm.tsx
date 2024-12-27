@@ -1,12 +1,9 @@
 'use client';
 
-// This form intentionally contains errors for demonstration
 export function BrokenForm() {
-  // Missing form state management
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // No form validation
-    // No error handling
     console.log('Form submitted');
   };
 

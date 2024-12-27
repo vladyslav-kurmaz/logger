@@ -5,7 +5,7 @@
 import { Container } from '@chakra-ui/react'
 import { useLogger } from '@/lib/logger/context' // Ensure you import useLogger
 import FormComponent from '../components/forms/working/ContactForm'
-import { BrokenForm } from '../components/forms/error/BrokenForm'
+// import { BrokenForm } from '../components/forms/error/BrokenForm'
 import { Carousel } from '../components/ui/Carousel'
 import { AccordionDemo } from '../components/ui/AccordionDemo'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -54,7 +54,7 @@ export default function DemoPage() {
             <Tabs defaultValue='working'>
               <TabsList>
                 <TabsTrigger value='working'>Working Components</TabsTrigger>
-                <TabsTrigger value='broken'>Error Components</TabsTrigger>
+                {/* <TabsTrigger value='broken'>Error Components</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value='working' className='space-y-8'>
@@ -77,14 +77,14 @@ export default function DemoPage() {
                 <button onClick={handleTestAction}>Trigger Test Action</button>
               </TabsContent>
 
-              <TabsContent value='broken'>
+              {/* <TabsContent value='broken'>
                 <section>
                   <h2 className='text-2xl font-bold mb-4'>
                     Broken Form Example
                   </h2>
                   <BrokenForm />
                 </section>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </CardContent>
         </Card>
